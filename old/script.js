@@ -1,5 +1,5 @@
-import Game from './module/game.js';
-import GameInterface from './module/gameInterface.js';
+import Game from '../module/game.js';
+import GameInterface from '../module/gameInterface.js';
 
 const game = new Game();
 const gameInterface = new GameInterface();
