@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  --roboto: 'Roboto', sans-serif;
+
+  --text-black-normal: normal 900 1rem/1.5rem var(--roboto);
+  --text-black-2xl: normal 900 1.5rem/2rem var(--roboto);
+  --text-medium-xsmall: normal 500 0.75rem/1rem var(--roboto);
+  --text-medium-normal: normal 500 0.75rem/1.5rem var(--roboto);
+  --text-normal: normal 400 1rem/1.5rem var(--roboto);
+}
