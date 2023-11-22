@@ -6,6 +6,6 @@ html {
   --text-black-normal: normal 900 1rem/1.5rem var(--roboto);
   --text-black-2xl: normal 900 1.5rem/2rem var(--roboto);
   --text-medium-xsmall: normal 500 0.75rem/1rem var(--roboto);
-  --text-medium-normal: normal 500 0.75rem/1.5rem var(--roboto);
+  --text-medium-normal: normal 500 1rem/1.5rem var(--roboto);
   --text-normal: normal 400 1rem/1.5rem var(--roboto);
 }
