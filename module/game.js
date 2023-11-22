@@ -35,10 +35,11 @@ function Game() {
       return figure;
     },
     checkWinner(player, enemy) {
-      const diff = player.figure.weight - enemy.figure.weight;
+      let diff = player.figure.weight - enemy.figure.weight;
 
-      if (diff < 0) return player;
-      if (diff > 0) return enemy;
+      if (diff !== 0 && !(Math.abs(diff) % 2)) diff = -diff;
+      if (diff > 0) return player;
+      if (diff < 0) return enemy;
 
       return null;
     },
