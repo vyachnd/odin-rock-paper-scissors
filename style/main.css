@@ -1,1 +1,73 @@
 @import './reset.css';
+@import './color.css';
+@import './font.css';
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+html,
+body {
+  background-color: rgb(var(--zinc-900));
+  color: rgb(var(--zinc-50));
+  font: var(--text-normal);
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+
+/* HEADER */
+.header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.header .header__title h1 {
+  font: var(--text-black-normal);
+  color: rgb(var(--zinc-50));
+}
+.header .header__title p {
+  font: var(--text-medium-xsmall);
+  color: rgb(var(--zinc-500));
+}
+
+.header .header__title p a {
+  font: var(--text-medium-xsmall);
+  color: rgb(var(--zinc-500));
+  transition: color 0.35s ease;
+}
+.header .header__title p a:hover {
+  color: rgb(var(--lime-500));
+}
+
+.header .header__link {
+  background-color: rgb(var(--zinc-800));
+  border-radius: 4px;
+  color: rgb(var(--zinc-500));
+  padding: 8px 16px;
+  font: var(--text-medium-xsmall);
+  text-transform: uppercase;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+.header .header__link:hover {
+  background-color: rgb(var(--zinc-700));
+  color: rgb(var(--zinc-50));
+}
+.header .header__link:active {
+  background-color: rgb(var(--zinc-600));
+  color: rgb(var(--zinc-50));
+}
+/* END HEADER */
+
+/* MAIN */
+.main .wrapper {
+  padding: 40px 24px;
+}
+/* END MAIN */
