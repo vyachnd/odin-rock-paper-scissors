@@ -66,13 +66,14 @@ const scenes = {
     type: gameInterface.type.ALERT,
     message: [
       () => {
-        const { rounds } = game;
-        const { players: [user, computer], winner } = rounds[rounds.length - 1];
-        const winMessage = winner ? `${winner.name} wins the round!` : 'It\'s a DRAW!';
+        const rounds = game.rounds;
+        const [user, computer] = rounds[rounds.length - 1];
+        const winner = user.isWinner && user || computer.isWinner && computer;
+        const winMessage = winner ? `${winner.player.name} wins the round!` : 'It\'s a DRAW!';
 
         return [
           `ROUND ${game.rounds.length}`,
-          `[ ${user.score} ] ${user.name} | ${user.figure.symbol} vs ${computer.figure.symbol} | ${computer.name} [ ${computer.score} ]\n`,
+          `[ ${user.player.score} ] ${user.player.name} | ${user.figure.symbol} vs ${computer.figure.symbol} | ${computer.player.name} [ ${computer.player.score} ]\n`,
           winMessage,
         ].join('\n');
       }
@@ -92,9 +93,9 @@ const scenes = {
         const gameWinner = game.gameWinner();
         const [user, computer] = game.players;
 
-        if (gameWinner !== user) {
-          return `Sorry, but the ${gameWinner.name.toUpperCase()} was luckier than you. Maybe it's worth trying again?`;
-        } else if (gameWinner !== computer) {
+        if (gameWinner === computer) {
+          return `Sorry, but the ${gameWinner.name.toUpperCase()} was luckier than you. His score is ${gameWinner.score} points. Maybe it's worth trying again?`;
+        } else if (gameWinner === user) {
           return `Congratulate, ${gameWinner.name} have won! Your score is ${gameWinner.score} points. Maybe it's worth trying again?`;
         } else {
           return 'DRAW. Maybe it\'s worth trying again?';

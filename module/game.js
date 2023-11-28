@@ -61,13 +61,10 @@ function Game() {
         const winner = this.checkWinner(user, computer);
         if (winner) winner.incScore();
 
-        this.saveRound({
-          players: [
-            { ...user, figure: user.figure },
-            { ...computer, figure: computer.figure },
-          ],
-          winner,
-        });
+        this.saveRound([
+          { player: user, figure: user.figure, isWinner: user === winner, isDraw: !winner },
+          { player: computer, figure: computer.figure, isWinner: computer === winner, isDraw: !winner },
+        ]);
 
         return rounds[rounds.length - 1];
       }
